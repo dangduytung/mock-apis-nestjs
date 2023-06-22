@@ -25,6 +25,9 @@
 # Mock Apis NestJs
 
 Mock Apis NestJs
+* Endpoint - [http://localhost:3001/api](http://localhost:3001/api)
+* Docs - [http://localhost:3001/docs](http://localhost:3001/docs)
+* Static assets - [http://localhost:3001/static](http://localhost:3001/static) (with API `uploads` public)
 
 # Authenticate or not
 Comment or un-comment code in file `app.module.ts`

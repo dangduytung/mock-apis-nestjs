@@ -10,9 +10,16 @@ import { AuthIgnoreMiddleware } from './auth_ignore.middleware';
 import { CommonModule } from './common/common.module';
 import { TagsModule } from './tags/tags.module';
 import { TypesModule } from './types/types.module';
+import { UploadsModule } from './uploads/uploads.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), CommonModule, TagsModule, TypesModule],
+  imports: [
+    ConfigModule.forRoot(),
+    CommonModule,
+    TagsModule,
+    TypesModule,
+    UploadsModule,
+  ],
   controllers: [],
   providers: [],
 })
