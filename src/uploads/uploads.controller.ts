@@ -11,8 +11,10 @@ import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { UploadsService } from './uploads.service';
 import { storagePrivate, storagePublic } from '../config/storage.config';
 import { FILE_UPLOADS_MAX_NUMBER } from 'src/config/config';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('uploads')
+@ApiTags('uploads')
 export class UploadsController {
   private readonly logger = new Logger(UploadsController.name);
   constructor(private readonly uploadsService: UploadsService) {}
