@@ -11,6 +11,7 @@ import { CommonModule } from './common/common.module';
 import { TagsModule } from './tags/tags.module';
 import { TypesModule } from './types/types.module';
 import { UploadsModule } from './uploads/uploads.module';
+import { DownloadsModule } from './downloads/downloads.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UploadsModule } from './uploads/uploads.module';
     TagsModule,
     TypesModule,
     UploadsModule,
+    DownloadsModule,
   ],
   controllers: [],
   providers: [],
