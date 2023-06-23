@@ -1,5 +1,4 @@
 import { Injectable, Logger } from '@nestjs/common';
-import path from 'path';
 import * as config from 'src/config/config';
 
 @Injectable()
@@ -20,14 +19,20 @@ export class UploadsService {
     return res;
   }
 
-  // uploadFiles(files: Array<Express.Multer.File>, folder: string): any {
-  //   const res: Array<any> = [];
-  //   if (!folder) {
-  //     folder = FOLDER_PRIVATE;
-  //   }
-  //   files.forEach((file) => {
-  //     res.push({ path: '/' + folder + '/' + file?.filename });
-  //   });
-  //   return res;
-  // }
+  /**
+   * Returns the array paths of multiple files after uploaded.
+   * @param {Array<Express.Multer.File>} files - The multiple files
+   * @param {string} [accessType='private'] - The access type: 'private' or 'public'.
+   * @returns {Array<object>} The array of files path.
+   */
+  getFilesPath(files: Array<Express.Multer.File>, accessType = 'private'): any {
+    const folder =
+      accessType == 'public' ? config.FOLDER_PUBLIC : config.FOLDER_PRIVATE;
+    this.logger.log('getFilesPath', { accessType, folder });
+    const res = [];
+    files.forEach((file) => {
+      res.push({ path: '/' + folder + '/' + file?.filename });
+    });
+    return res;
+  }
 }

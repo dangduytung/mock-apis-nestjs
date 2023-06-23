@@ -1,3 +1,7 @@
+export const FILE_UPLOADS_MAX_NUMBER = Number(
+  process.env.FILE_UPLOADS_MAX_NUMBER,
+);
+
 export const FILE_UPLOADS_PUBLIC_PATH = process.env.FILE_UPLOADS_PUBLIC_PATH;
 export const FILE_UPLOADS_PRIVATE_PATH = process.env.FILE_UPLOADS_PRIVATE_PATH;
 
